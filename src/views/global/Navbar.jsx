@@ -37,18 +37,26 @@ const Navbar = () => {
       </Box>
       <Box display={"flex"}>
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-          <Typography>{mode}</Typography>
-          <IconButton onClick={() => dispatch(setMode())}>
+          <Typography>{mode} mode</Typography>
+          <IconButton
+            onClick={() => dispatch(setMode())}
+            sx={{
+              "&:hover": {
+                scale: "120%",
+                transition: "all 0.5s",
+              },
+            }}
+          >
             {mode === "dark" ? <DarkModeOutlined /> : <LightModeOutlinedIcon />}{" "}
           </IconButton>
         </Box>
-        <IconButton>
+        <IconButton onClick={() => alert("your notification shows up here")}>
           <NotificationsOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={() => alert("access the settings page here")}>
           <SettingsOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={() => alert("Takes yu to the profile page")}>
           <PersonOutline />
         </IconButton>
       </Box>
